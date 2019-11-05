@@ -5,6 +5,8 @@
 
 - 从狭义上讲，是指某些著名的数据结构和算法，比如队列、栈、堆、二分查找、动态规划等。
 
+##前言
+* [时间复杂度](docs/时间复杂度/时间复杂度.md)
 
  [快排](src/com/learn/sorts/QuickSort.java)  
-[常用知识](docs/Summary.md)
+
