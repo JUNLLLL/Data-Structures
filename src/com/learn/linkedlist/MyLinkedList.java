@@ -31,10 +31,19 @@ public class MyLinkedList<T> {
        last.setNext(node);//往尾节点后加节点
        last = node;//该节点设为最后一个节点
        size++;
+    }
 
-        System.out.println("head"+head.getData());
-        System.out.println("last"+last.getData());
-        System.out.println("----------------");
+
+    /**
+     * 获取数据
+     * @param index 索引
+     * @return 数据t
+     */
+    public T get(int index){
+        if (index < 0 || index >= size)
+            return  null;
+
+        return getNode(index).getData();
     }
 
 
@@ -46,50 +55,72 @@ public class MyLinkedList<T> {
     public T remove(int index) {
         if (index < 0 || index >= size)
             return  null;
-//        if (index == 0) {// 当索引为0时，令头节点的下一个节点为头节点
-//            Node<T> node = head.getNext();
-//            head.setNext(node.getNext());
-//            size--;
-//            return node.getData();
-//        }
+        if (index == 0) {// 当索引为0时，把第一个节点的下一个节点赋值给头节点
+            Node<T> node = head.getNext();
+            head.setNext(node.getNext());
+            size--;
+            return node.getData();
+        }
         // 获取要删除节点的前一个节点
-        Node<T> bNode =null;// Select(index);
+        Node<T> previousNode = getNode(index-1);
         // 获取要删除的节点
-        Node<T> Node = bNode.getNext();
+        Node<T> currNode = previousNode.getNext();
         // 获取要删除节点的后一个节点
-        Node<T> nNode = Node.getNext();
-
+        Node<T> nextNode = currNode.getNext();
         // 先建立删除节点的前一个节点和删除节点的后一个节点的关系
-        bNode.setNext(nNode);
-        // 清除dNode的下一个节点
-        Node.setNext(null);
+        previousNode.setNext(nextNode);
+        // 清除当前Node的下一个节点
+        currNode.setNext(null);
         size--;// 计数器减1
-        return Node.getData();// 返回删除节点中的数据域
+        return currNode.getData();// 返回删除节点中的数据域
     }
 
 
-    private T find(int index){
-        T data = null;
-        if (index == 0) //删除头结点
-        {
-            data = head.getData();
-            head = head.getNext();
+
+
+    //插入位置
+    public T set(int index, T t){
+
+        if (index < 0 || index >= size)
+            return  null;
+
+        Node<T> insertNode= new Node<>(t);// 以t实例化一个节点
+
+        if (index == 0) {// 当索引为0时，把第一个节点的下一个节点赋值给头节点
+            Node<T> node = head.getNext();
+            head.setNext(insertNode);
+            insertNode.setNext(node);
+            size++;
+            return insertNode.getData();
         }
-        else
-        {
-            Node<T> temp = head;
-            for (int i = 1; i <= index - 1; i++) {
-                //让temp向后移动一个位置
-                temp = temp.getNext();
-            }
-            Node<T> preNode = temp;
-            Node<T> currentNode = temp.getNext();
-            data = currentNode.getData();
-            Node<T> nextNode = temp.getNext().getNext();
-            preNode.setNext(nextNode);
-        }
-        return data;
+
+        // 获取要插入节点的前一个节点
+        Node<T> previousNode = getNode(index-1);
+
+        // 获取要当前节点
+        Node<T> currNode = previousNode.getNext();
+
+        // 建立和前一个节点的联系，
+        previousNode.setNext(insertNode);
+
+        // 插建立和下一个节点的联系
+        insertNode.setNext(currNode);
+        size++;
+        return insertNode.getData();// 返回删除节点中的数据域
+
     }
+
+
+    //根据获取节点信息
+    public Node<T> getNode(int index){
+        Node<T> temp = head;
+        //因为索引从0开始，每一次循环就是获取到第几个节点
+        for (int i=0;i<=index;i++){
+            temp = temp.getNext();
+        }
+        return temp;
+    }
+
 
 
 }
