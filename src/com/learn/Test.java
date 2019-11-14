@@ -1,24 +1,17 @@
 package com.learn;
 
-import com.learn.linkedlist.MyLinkedList;
-
-import java.util.LinkedList;
-
-import static com.learn.array.GenericArray.addLengthArray;
-import static com.learn.array.GenericArray.mergeSortedArray;
-
 public class Test {
    public  static  void  main(String[] args){
-     int[]  nums1 = {1,2,3,5};
-     int[]  nums2 = {2,5,6};
-
-     int[] num3 = mergeSortedArray(nums1,nums1.length,nums2,nums2.length);
-
-
-
-       for(int i = 0;i<num3.length;i++){
-           System.out.println(num3[i]);
-       }
+//       ListNode a = new Node(1);
+//       ListNode b = new Node(2);
+//       ListNode c = new Node(3);
+//       ListNode d = new Node(4);
+//       ListNode e = new Node(5);
+//       a.setNext(b);
+//       b.setNext(c);
+//       c.setNext(d);
+//       d.setNext(e);
+//       System.out.println(a);/*data=1-->data=2-->data=3-->data=4-->data=5-->null*/
 
 
    }

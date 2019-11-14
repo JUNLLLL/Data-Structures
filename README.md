@@ -13,7 +13,7 @@
 ### [链表](docs/3、链表/链表学习笔记.md)
 - [单链表反转](src/com/learn/linkedlist/GenericLinkedList.java)
 - [两个有序的链表合并](src/com/learn/linkedlist/GenericLinkedList.java)
-- [删除链表倒数第 n 个结点](src/com/learn/linkedlist/GenericLinkedList.java)
+- [删除链表倒数第 k 个结点](src/com/learn/linkedlist/GenericLinkedList.java)
 - [求链表的中间结点](src/com/learn/linkedlist/GenericLinkedList.java)
  
 

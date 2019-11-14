@@ -2,6 +2,30 @@ package com.learn.linkedlist;
 
 public class GenericLinkedList {
 
+    class Node {
+        int data;//节点的属性，存储节点的值
+        Node next;//节点的属性，存储了下一个节点的地址
+        Node(int x) { data = x; }
+
+        public int getData() {
+            return data;
+        }
+
+        public void setData(int data) {
+            this.data = data;
+        }
+
+        public Node getNext() {
+            return next;
+        }
+
+        public void setNext(Node next) {
+            this.next = next;
+        }
+    }
+
+
+
     //使用递归实现链表反转
     public  Node  reverseList(Node head){
 
@@ -14,6 +38,7 @@ public class GenericLinkedList {
         head.setNext(null);// 前一结点的指针域令为null;
         return reHead;// 反转后新链表的头结点
     }
+
 
    //遍历反转链表
     public  Node reverseLinkedList(Node head) {
@@ -38,11 +63,10 @@ public class GenericLinkedList {
         return pre;
     }
 
-
     //合并两个有序链表
-    public  ListNode mergeTwoLists(ListNode listNode1, ListNode listNode2) {
-        ListNode head = new ListNode(0); //记录头部节点，最后返回
-        ListNode temp = head;
+    public  Node mergeTwoLists(Node listNode1, Node listNode2) {
+        Node head = new Node(0); //记录头部节点，最后返回
+        Node temp = head;
 
         while ( listNode1 != null && listNode2 != null ){
             if (listNode1.data < listNode2.data){
@@ -61,12 +85,53 @@ public class GenericLinkedList {
         return head.next;
     }
 
-    class ListNode {
-        int data;//节点的属性，存储节点的值
-        ListNode next;//节点的属性，存储了下一个节点的地址
-        ListNode(int x) { data = x; }
-      }
 
+    // 删除倒数第K个结点
+    //定义两个节点pFast和pSlow，都指向头结点，pFast先后移k-1位，使pFast指向第k个结点，此时pSlow就是相对pFast的倒数第k个结点。
+    // 然后同时后移，当pFast走到表尾时，pSlow正好指向倒数第k个结点。然后将pSlow指向的结点删除
+    public  Node deleteLastKth(Node list, int k) {
+        Node fast = list;
+        Node slow = list;
+        int i = 1;
+        while (fast != null && i < k) {
+            fast = fast.next;
+            ++i;
+        }
+
+        if (fast == null) return list;//没有k个节点
+
+        Node prev = null;//记录倒数k节点前一个的的位置,方便删除倒数k节点
+        //两者一起先后移动，直到到达最后一个节点
+        while (fast.next != null) {
+            fast = fast.next;
+            prev = slow;
+            slow = slow.next;
+        }
+
+        if (prev == null) {//说明刚刚好头节点是倒数K
+            list = list.next;
+        } else {
+            prev.next = prev.next.next;
+        }
+        return list;
+    }
+
+
+   // 求中间结点
+    //将快慢指针先指向头结点，快指针移动2个步长，慢指针移动1个步长，当快指针指向链表末尾的时候，慢指针刚好就在中间节点上
+    public static Node findMiddleNode(Node list) {
+        if (list == null) return null;
+
+        Node fast = list;
+        Node slow = list;
+
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+
+        return slow;
+    }
 
 
 }
