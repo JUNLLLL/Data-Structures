@@ -2,9 +2,8 @@ package com.learn.linkedlist;
 
 public class GenericLinkedList {
 
-
     //使用递归实现链表反转
-    public static Node  reverseList(Node head){
+    public  Node  reverseList(Node head){
 
         // head看作是前一结点，head.getNext()是当前结点，reHead是反转后新链表的头结点
         if (head == null || head.getNext() == null) {
@@ -17,7 +16,7 @@ public class GenericLinkedList {
     }
 
    //遍历反转链表
-    public static Node reverseLinkedList(Node head) {
+    public  Node reverseLinkedList(Node head) {
 
         if (head == null) {
             return head;
@@ -38,6 +37,36 @@ public class GenericLinkedList {
         head.setNext(null);
         return pre;
     }
+
+
+    //合并两个有序链表
+    public  ListNode mergeTwoLists(ListNode listNode1, ListNode listNode2) {
+        ListNode head = new ListNode(0); //记录头部节点，最后返回
+        ListNode temp = head;
+
+        while ( listNode1 != null && listNode2 != null ){
+            if (listNode1.data < listNode2.data){
+                temp.next = listNode1;
+                listNode1 = listNode1.next;//后移，用于继续比较选出接下来最小的节点
+            }
+            else{
+                temp.next = listNode2;
+                listNode2 = listNode2.next;
+            }
+            temp = temp.next;//后移，用于接收下一个节点信息
+        }
+
+        if (listNode1 != null) { temp.next = listNode1; }
+        if (listNode2 != null) { temp.next = listNode2; }
+        return head.next;
+    }
+
+    class ListNode {
+        int data;//节点的属性，存储节点的值
+        ListNode next;//节点的属性，存储了下一个节点的地址
+        ListNode(int x) { data = x; }
+      }
+
 
 
 }

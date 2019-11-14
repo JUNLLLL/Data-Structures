@@ -11,10 +11,9 @@
 - [实现一个支持动态扩容的数组](src/com/learn/array/GenericArray.java)
 - [实现两个有序数组合并为一个有序数组](src/com/learn/array/GenericArray.java)
 ### [链表](docs/3、链表/链表学习笔记.md)
-- 单链表反转
-- 链表中环的检测
-- 两个有序的链表合并
-- 删除链表倒数第 n 个结点
-- 求链表的中间结点
+- [单链表反转](src/com/learn/linkedlist/GenericLinkedList.java)
+- [两个有序的链表合并](src/com/learn/linkedlist/GenericLinkedList.java)
+- [删除链表倒数第 n 个结点](src/com/learn/linkedlist/GenericLinkedList.java)
+- [求链表的中间结点](src/com/learn/linkedlist/GenericLinkedList.java)
  
 

@@ -2,11 +2,10 @@ package com.learn.array;
 
 import java.util.HashMap;
 
-public class GenericArray {
-
+public  class GenericArray {
 
    //数组扩容
-    public static int[] addLengthArray(int[] array){
+    public  int[] addLengthArray(int[] array){
         int[] newArray = new int [array.length*2];
         //将array数组从0位置至array.length位置，复制到newArray数组0位置到array.length位置。
         System.arraycopy(array,0,newArray,0,array.length);
@@ -19,7 +18,7 @@ public class GenericArray {
     }
 
     //两数之和
-    public static int[] twoSum(int[] nums, int target) {
+    public  int[] twoSum(int[] nums, int target) {
 
         HashMap<Integer,Integer> hashMap = new HashMap<>();
 
@@ -42,7 +41,7 @@ public class GenericArray {
     }
 
     //合并两个有序数组,返回一个新的数组
-     public static int[] mergeSortedArray(int[] nums1, int m, int[] nums2, int n){
+     public  int[] mergeSortedArray(int[] nums1, int m, int[] nums2, int n){
          int [] result = new int[m+n];
          int i =0,j=0,k=0;
 
