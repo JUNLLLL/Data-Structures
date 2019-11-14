@@ -4,19 +4,22 @@ import com.learn.linkedlist.MyLinkedList;
 
 import java.util.LinkedList;
 
+import static com.learn.array.GenericArray.addLengthArray;
+import static com.learn.array.GenericArray.mergeSortedArray;
+
 public class Test {
    public  static  void  main(String[] args){
-       MyLinkedList<Integer> linkedList = new MyLinkedList<>();
-       linkedList.add(2222);
-       linkedList.add(3333);
-       linkedList.add(44444);
-       linkedList.add(55555);
+     int[]  nums1 = {1,2,3,5};
+     int[]  nums2 = {2,5,6};
 
-    //   System.out.println(linkedList.remove(2));
-          linkedList.set(0,9999);
+     int[] num3 = mergeSortedArray(nums1,nums1.length,nums2,nums2.length);
 
-       for (int i=0;i<linkedList.size();i++)
-           System.out.println(linkedList.get(i));
+
+
+       for(int i = 0;i<num3.length;i++){
+           System.out.println(num3[i]);
+       }
+
 
    }
 }
