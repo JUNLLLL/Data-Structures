@@ -15,4 +15,22 @@ public class Test   {
 
 
    }
+
+   private void sort(int[] arr){
+
+      for (int i = 1; i<arr.length; i++){
+         int curValue = arr[i];
+         int j = i-1;
+         // 查找插入的位置
+         for (;j>=0;j--){
+              if (curValue < arr[j]){
+                   arr[j+1] = arr[j];// 数据移动
+              }else {
+                 break;
+              }
+         }
+         arr[j+1] = curValue; // 插入数据
+      }
+
+   }
 }

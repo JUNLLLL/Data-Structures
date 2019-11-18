@@ -26,6 +26,6 @@
  ### [队列](docs/5、队列/学习笔记.md)
  - [数组实现队列](src/com/learn/queue/ArrayQueue.java)
  - [链表实现队列](src/com/learn/queue/LinkedListQueue.java)
- - [链表实现循环队列](src/com/learn/queue/CircularQueue.java)
+ - [数组实现循环队列](src/com/learn/queue/CircularQueue.java)
  
  ### [递归](docs/6、递归/学习笔记.md)
