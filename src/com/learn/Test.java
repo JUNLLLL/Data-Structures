@@ -1,6 +1,6 @@
 package com.learn;
 
-public class Test {
+public class Test   {
    public  static  void  main(String[] args){
 //       ListNode a = new Node(1);
 //       ListNode b = new Node(2);

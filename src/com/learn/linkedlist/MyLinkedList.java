@@ -4,13 +4,13 @@ public class MyLinkedList<T> {
     // 声明头节点
     private Node<T> head;
     //声明 尾节点
-    private Node<T> last;
+    private Node<T> tail;
     // 链表的大小
     private int size;
 
     public MyLinkedList() {
         head = new Node<T>();// 实例化头节点
-        last = head;//头节点首先赋值给尾节点
+        tail = head;//头节点首先赋值给尾节点
     }
 
     /**
@@ -28,8 +28,8 @@ public class MyLinkedList<T> {
      */
     public void add(T t) {
        Node<T> node= new Node<>(t);// 以t实例化一个节点
-       last.setNext(node);//往尾节点后加节点
-       last = node;//该节点设为最后一个节点
+       tail.setNext(node);//往尾节点后加节点
+       tail = node;//该节点设为最后一个节点
        size++;
     }
 
