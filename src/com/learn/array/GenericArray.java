@@ -54,16 +54,14 @@ public  class GenericArray {
                  }
          }
         // 判断两个数组，可能有一个没遍历完，那么把这个没遍历完的继续添加到result数组后面
-         if(i != m) {
-             while (i < m) {
-                 result[k++] = nums1[i++];
-             }
+         while (i < m) {
+             result[k++] = nums1[i++];
          }
-         if(j != n) {
-             while (j < n) {
-                 result[k++] = nums2[j++];
-             }
+
+         while (j < n) {
+             result[k++] = nums2[j++];
          }
+
 
         return result;
 
