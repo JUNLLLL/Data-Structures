@@ -22,12 +22,18 @@
  ### [栈](docs/4、栈/学习笔记.md) 
  - [数组实现栈](src/com/learn/stack/ArrayStack.java)
  - [链表实现栈](src/com/learn/stack/LinkedListStack.java) 
- 
+
  ### [队列](docs/5、队列/学习笔记.md)
  - [数组实现队列](src/com/learn/queue/ArrayQueue.java)
  - [链表实现队列](src/com/learn/queue/LinkedListQueue.java)
  - [数组实现循环队列](src/com/learn/queue/CircularQueue.java)
- 
- ### [递归](docs/6、递归/学习笔记.md)
- 
-  ### [排序](docs/7、排序/学习笔记.md)
+
+### [递归](docs/6、递归/学习笔记.md)
+
+### [排序](docs/7、排序/学习笔记.md)
+- 冒泡排序，插入排序，选择排序  ------ O(n^2)
+- 归并排序，快速排序，堆排序    ------ O(logn)
+- 桶排序，计数排序，基数排序    ------  O(n)
+### [查找](docs/8、查找/学习笔记.md)
+
+### [哈希](docs/9、哈希/学习笔记.md)
