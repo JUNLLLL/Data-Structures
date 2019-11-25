@@ -27,10 +27,10 @@ public class Graph {  // 无向图
 
     }
 
-    //广度优先搜索
+    //广度优先搜索----最短路径
     public void bfs(int s, int t) {
         if (s == t) return;
-        // visited是用来记录已经被访问的顶点，用来避免顶点被重复访问。
+        // visited是用来记录已经被访问的顶点，用来避免顶点被重复访问，访问过设置为true
         boolean[] visited = new boolean[v];
         visited[s] = true;
         // queue是一个队列，用来存储已经被访问、但相连的顶点还没有被访问的顶点。
@@ -43,6 +43,7 @@ public class Graph {  // 无向图
         }
         while (queue.size() != 0) {
             int w = queue.poll();
+            System.out.println(w);
             for (int i = 0; i < adj[w].size(); ++i) {
                 int q = adj[w].get(i);
                 if (!visited[q]) {
@@ -76,7 +77,9 @@ public class Graph {  // 无向图
         graph.addEdge(4,6);
         graph.addEdge(5,7);
         graph.addEdge(6,7);
-//        graph.bfs(0,6);
+
+        //广度优先
+        // graph.bfs(0,6);
 
         // 深度优先
         graph.dfs(0, 6);
